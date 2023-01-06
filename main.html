@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="car_shop.css" rel="stylesheet" type="text/css" />
+    <script src="JS/jquery-3.5.1.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/a77feae132.js"
+      ;
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="main-header-box">
+        <nav class="nav-container">
+          <div id="navbar">
+            <h1 id="navbar-logo">
+              <div class="top_list_two">
+                <h2><b>Auto</b>Couture</h2>
+                <p>Motoring</p>
+              </div>
+            </h1>
+            <div class="menu-toggle" id="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+              <li>
+                <a href="#" class="nav-links">Shop</a>
+              </li>
+              <li>
+                <a href="#" class="nav-links">Tutorials</a>
+              </li>
+              <li>
+                <a href="#" class="nav-links">Services</a>
+              </li>
+              <li>
+                <a href="#" class="nav-links">Blog</a>
+              </li>
+              <li>
+                <div class="shopping-cart shoppingCartButton nav-links">
+                  <div class="sum-prices">
+                    <!--Shopping cart logo-->
+                    <i class="fas fa-shopping-cart shoppingCartButton"></i>
+                    <!--The total prices of products in the shopping cart -->
+                    <h6 id="sum-prices"></h6>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- When we open the cart this gets displayed -->
+          <div class="producstOnCart hide">
+            <div class="overlay"></div>
+            <div class="top">
+              <button id="closeButton">
+                <i class="fas fa-times-circle"></i>
+              </button>
+              <h3>Cart</h3>
+            </div>
+            <ul id="buyItems">
+              <h4 class="empty">Your shopping cart is empty</h4>
+            </ul>
+            <button class="btn checkout  productButton">Check out</button>
+          </div>
+        </nav>
+        <div class="Bold_Title">
+          <h1>Best-In-Class</h1>
+          <h1>Perfomance</h1>
+        </div>
+      </div>
+    </header>
+    <!-- chat  -->
+    <!-- on clicking this button, the chat form opens-->
+    <button class="open-button" onclick="openForm()">
+      <i class="fas fa-comments"></i>
+    </button>
+    <div class="chat-popup" id="myForm">
+      <form action="#" class="form-container">
+        <h1>Chat</h1>
+
+        <label for="msg"><b>Message</b></label>
+        <textarea placeholder="Type message.." name="msg" required></textarea>
+
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">
+          Close
+        </button>
+      </form>
+    </div>
+    <section class="bold">
+      <section class="zero">
+        <section class="left-panel">
+          <ul id="list-container">
+            <li class="model activemodel">All</li>
+            <li class="model">3 Series (E36)</li>
+            <li class="model">7 Series (E38)</li>
+            <li class="model">Z3</li>
+            <li class="model">5 Series (E39)</li>
+            <li class="model">3 Series (E46)</li>
+            <li class="model">X5 (E53)</li>
+            <li class="model">Z8</li>
+            <li class="model">7 Series (E65/E66)</li>
+            <li class="model">Z4 (E85/E86)</li>
+            <li class="model">5 Series (E60/E61)</li>
+            <li class="model">6 Series (E63/E64)</li>
+            <li class="model">X3 (E83)</li>
+            <li class="model">
+              1 Series (E81/E82/E87/E88)
+            </li>
+            <li class="model">
+              3 Series (E90/E91/E92/E93)
+            </li>
+            <li class="model">X5 (E70)</li>
+            <li class="model">7 Series (F01/F02)</li>
+            <li class="model">Z4 (E89)</li>
+            <li class="model">X1 (E84)</li>
+            <li class="model">
+              5 Series (F07/F10/F11)
+            </li>
+            <li class="model">
+              6 Series (F06/F12/F13)
+            </li>
+            <li class="model">X3 (F25)</li>
+            <li class="model">1 Series (F20/F21)</li>
+            <li class="model">
+              3 Series (F30/F31/F34)
+            </li>
+            <li class="model">i3</li>
+            <li class="model">
+              4 Series (F32/F33/F36)
+            </li>
+            <li class="model">2 Series (F22/F23)</li>
+            <li class="model">X5 (F15)</li>
+            <li class="model">2 Series (F45/F46)</li>
+            <li class="model">i8</li>
+            <li class="model">X4 (F26)</li>
+            <li class="model">X6 (F16)</li>
+            <li class="model">X1 (F48)</li>
+            <li class="model">7 Series (G11/G12)</li>
+            <li class="model">5 Series (G30/G31)</li>
+            <li class="model">1 Series (F52)</li>
+            <li class="model">6 Series (G32)</li>
+            <li class="model">X3 (G01)</li>
+            <li class="model">X4 (G02)</li>
+            <li class="model">X5 (G05)</li>
+            <li class="model">8 Series (G14/G15/G16)</li>
+            <li class="model">Z4 (G29)</li>
+            <li class="model">3 Series (G20/G21)</li>
+            <li class="model">1 Series (F40)</li>
+            <li class="model">X6 (G06)</li>
+            <li class="model">X7 (G07)</li>
+            <li class="model">2 Series (F44)</li>
+            <li class="model">4 Series (G22/G23/G26)</li>
+            <li class="model">iX3</li>
+            <li class="model">iX</li>
+            <li class="model">i4</li>
+            <li class="model">2 Series (G42)</li>
+            <li class="model">2 Series (U06)</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+            <li class="model">BMW F650GS & F800GS</li>
+          </ul>
+        </section>
+        <section class="right-panel">
+          <!-- Buttons for filtering -->
+          <div class="button-panel">
+            <div id="myBtnContainer">
+              <button class="btn active" onclick="filterSelection('all')">
+                Show all
+              </button>
+              <button class="btn" onclick="filterSelection('brakes')">
+                Brakes
+              </button>
+              <button class="btn" onclick="filterSelection('coolingSystems')">
+                Cooling Systems
+              </button>
+              <button class="btn" onclick="filterSelection('airFilters')">
+                Air Filters
+              </button>
+              <button class="btn" onclick="filterSelection('tyres')">
+                Tyres
+              </button>
+            </div>
+          </div>
+          <div class="parts-container">
+            <div class="products">
+              <!-- Here products are filtered based on class name, we have added filterDiv to all the products so that we can filter them all if the user click on all tab, followed by part type and model name as the class -->
+              <!-- Syntax for adding new product: filterDiv partType modelName(that you have added in the left panel) -->
+              <!-- also you need to add data-product-id="someUniqueId" for every product -->
+              <div class="product filterDiv brakes 3Series(E36)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://w7.pngwing.com/pngs/32/146/png-transparent-bmw-3-series-e30-bmw-6-series-bmw-3-series-e36-brake-piston-auto-part-machine.png"
+                      alt="brake 3Series(E36)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="1"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">3 Series(E36) Brake</h4>
+                    <h6 class="price">$<span class="priceValue">999</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv brakes 7Series(E38)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://i.ebayimg.com/images/g/nPkAAOSwWv5aC0nW/s-l640.jpg"
+                      alt="brake 7series(E38)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="2"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">7 Series(E38) Brake</h4>
+
+                    <h6 class="price">$<span class="priceValue">599</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv brakes Z3">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://r-parts-store.com/media/image/product/122439/md/mb-006-005_dkm-clutch-mb-kit-90-07-bmw-3-series-e36-e46---88-03-bmw-5-series-e34-e39---94-01-bmw-7-series-e38---95-03-bmw-z3-e36---03-09-bmw-z4-e85.jpg"
+                      alt="brake z3"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="3"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">Z3 Brake</h4>
+
+                    <h6 class="price">$<span class="priceValue">650</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv brakes 5Series(E39)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://www.k-tec-germany.com/media/image/product/44396/md/k-sport-bmw-5-e39-series-5-d-front-brake-330x32mm-8-piston.jpg"
+                      alt="brake 5Series(E39)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="4"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">5 Series(E9) Brake</h4>
+                    <h6 class="price">$<span class="priceValue">899</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv brakes 3Series(E46)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://www.motorsport24.nl/wp-content/uploads/2021/03/Brembo_Rem_Compleet.jpg"
+                      alt="brake 3Series(E46)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="5"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">3 Series(E46) Brake</h4>
+                    <h6 class="price">$<span class="priceValue">899</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv coolingSystems 3Series(E36)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://image.made-in-china.com/202f0j00HuyYpWRFHOqU/Loovey-Cooling-System-Heater-Water-Valve-for-BMW-3-Series-E36-318ti-Z3-Roadster-Coupe-64118375443.jpg"
+                      alt="cooling system 3Series(E36)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="6"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">3 Series(E36) Cooling Systems</h4>
+                    <h6 class="price">$<span class="priceValue">999</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv coolingSystems 7Series(E38)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://ae01.alicdn.com/kf/HTB1qh9ONZbpK1RjSZFyq6x_qFXa3/64116904496-Additional-Water-Pump-Cooling-Water-Pump-Water-Circulation-Pump-for-BMW-7-Series-BMW-X5.jpg_Q90.jpg_.webp"
+                      alt="cooling system 7Series(E38)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="7"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">7 Series(E38) Cooling Systems</h4>
+
+                    <h6 class="price">$<span class="priceValue">599</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv coolingSystems Z3">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://cdn11.bigcommerce.com/s-e8tpd4gd4j/images/stencil/500x659/products/3265/399/11_51_7_509_985-v1__45813.1608221889.jpg?c=1"
+                      alt="cooling system Z3"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="8"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">Z3 Cooling Systems</h4>
+
+                    <h6 class="price">$<span class="priceValue">650</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv coolingSystems 5Series(E39)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://ae01.alicdn.com/kf/HLB11MZPaODxK1RjSsphq6zHrpXaO/Brand-New-Radiator-Cooling-Fan-Motor-for-BMW-5-Series-E39-Prevent-Engine-From-Overheating.jpg"
+                      alt="cooling system 5Series(E39)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="9"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">5 Series(E9) Cooling Systems</h4>
+                    <h6 class="price">$<span class="priceValue">899</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv coolingSystems 3Series(E46)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="http://cdn.shopify.com/s/files/1/0441/8748/4320/products/E46COOLREFRKITV-2_600x_f455620b-98f6-4d53-bd58-242a9e31eda6.jpg?v=1617897944"
+                      alt="cooling system 3Series(E46)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="10"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">3 Series(E46) Cooling Systems</h4>
+                    <h6 class="price">$<span class="priceValue">899</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv airFilters 3Series(E36)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://m.media-amazon.com/images/I/71VHZy2uOfL._AC_SY355_.jpg"
+                      alt="airFilters 3Series(E36)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="11"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">3 Series(E36) Air Filters</h4>
+                    <h6 class="price">$<span class="priceValue">999</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv airFilters 7Series(E38)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://www.car-parts24.com/media/image/product/73592/lg/2-x-mahle-knecht-cabin-air-filter-for-bmw-e38.jpg"
+                      alt="airFilters 7Series(E38)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="12"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">7 Series(E38) Air Filters</h4>
+
+                    <h6 class="price">$<span class="priceValue">599</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv airFilters Z3">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://autosiopa.com/wp-content/uploads/2019/07/HS-0199.jpg"
+                      alt="airFilters Z3"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="13"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">Z3 Air Filters</h4>
+
+                    <h6 class="price">$<span class="priceValue">650</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv airFilters 5Series(E39)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://ae01.alicdn.com/kf/Hed20afcdb4734b638c211fd44a4d634fX/High-Performance-Cabin-Air-Filter-Replaces-for-BMW-5-Series-E39-520i-523i-Reducing-contaminants-like.jpg_Q90.jpg_.webp"
+                      alt="airFilters 5Series(E39)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="14"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">5 Series(E9) Air Filters</h4>
+                    <h6 class="price">$<span class="priceValue">899</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv airFilters 3Series(E46)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://m.media-amazon.com/images/I/71DsEgk45-L._SL1200_.jpg"
+                      alt="airFilters 3Series(E46)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="15"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">3 Series(E46) Air Filters</h4>
+                    <h6 class="price">$<span class="priceValue">899</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv tyres 3Series(E36)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://tyresnmore.com/media/catalog/product/cache/2054d0f1b20082b45fc2d0e158b802d0/v/1/v103_5.jpg"
+                      alt="tyres 3Series(E36)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="16"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">3 Series(E36) Tyres</h4>
+                    <h6 class="price">$<span class="priceValue">999</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv tyres 7Series(E38)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://cdn11.bigcommerce.com/s-hkk7s/images/stencil/1600x1600/products/27174/244119/inv_025533__60056.1571353164.jpg?c=2"
+                      alt="tyres 7Series(E38)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="17"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">7 Series(E38) Tyres</h4>
+
+                    <h6 class="price">$<span class="priceValue">599</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv tyres Z3">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://i.ebayimg.com/images/g/T08AAOSwvNhdDlE0/s-l300.jpg"
+                      alt="tyres Z3"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="18"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">Z3 Tyres</h4>
+
+                    <h6 class="price">$<span class="priceValue">650</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv tyres 5Series(E39)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://www.picclickimg.com/d/l400/pict/223984769531_/BMW-5-Series-E39-16-Inch-Turbine-Alloy.jpg"
+                      alt="tyres 5Series(E39)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="19"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">5 Series(E9) Tyres</h4>
+                    <h6 class="price">$<span class="priceValue">899</span></h6>
+                  </div>
+                </div>
+              </div>
+              <div class="product filterDiv tyres 3Series(E46)">
+                <div class="product-under">
+                  <figure class="product-image">
+                    <img
+                      src="https://i.ebayimg.com/images/g/Ox8AAOSwdilfUlEy/s-l1600.jpg"
+                      alt="tyres 3Series(E46)"
+                    />
+                    <div class="product-over">
+                      <button
+                        class="btn btn-small addToCart"
+                        data-product-id="20"
+                      >
+                        <i class="fas fa-cart-plus"></i>Add to cart
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="product-summary">
+                    <h4 class="productName">3 Series(E46) Tyres</h4>
+                    <h6 class="price">$<span class="priceValue">899</span></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- for payment popup after we click checkout on the cart-->
+      <div class="payment">
+        <h1 class="payTitle">Personal Information</h1>
+        <label>Name and Surname</label>
+        <input type="text" placeholder="John Doe" class="payInput" />
+        <label>Phone Number</label>
+        <input type="text" placeholder="+1 234 5678" class="payInput" />
+        <label>Address</label>
+        <input type="text" placeholder="Elton St 21 22-145" class="payInput" />
+        <h1 class="payTitle">Card Information</h1>
+        <div class="cardIcons">
+          <img src="./img/visa.png" width="40" alt="" class="cardIcon" />
+          <img src="./img/master.png" alt="" width="40" class="cardIcon" />
+        </div>
+        <input type="password" class="payInput" placeholder="Card Number" />
+        <div class="cardInfo">
+          <input type="text" placeholder="mm" class="payInput sm" />
+          <input type="text" placeholder="yyyy" class="payInput sm" />
+          <input type="text" placeholder="cvv" class="payInput sm" />
+        </div>
+        <button class="payButton">Checkout!</button>
+        <span class="close">X</span>
+      </div>
+    </section>
+
+    <script src="carShop.js"></script>
+    <script src="shopping-cart.js"></script>
+  </body>
+</html>

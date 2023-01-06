@@ -1,0 +1,829 @@
+:root {
+    --dark: #161616;
+    --pure: #ffffff;
+    --ternary: #898989;
+    --light: #f2f2f2;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    background-color: var(--pure);
+}
+
+header {
+    height: 100vh;
+    background: url(https://cdn.bmwblog.com/wp-content/uploads/2018/06/BMW-M850i-engine.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: MyAnimation 4s ease 4s infinite alternate;
+    filter: grayscale(60%);
+    overflow: hidden;
+}
+
+@keyframes MyAnimation {
+    0% {
+        background-image: url(https://cdn.bmwblog.com/wp-content/uploads/2018/06/BMW-M850i-engine.jpg);
+        transition: 2s ease 3s;
+    }
+
+    100% {
+        transition-delay: 4s;
+        height: 100vh;
+        background-image: url(https://www.armaspeed.com/wp-content/uploads/2019/03/BMW-F82-M4-F80-M3-Carbon-Steering-wheel-cover.jpg);
+        transition: 2s ease 3s;
+    }
+}
+
+/* for navigation bar */
+.nav-container {
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    position: absolute;
+    width: 100%;
+}
+
+#navbar {
+    background-color: rgb(0, 0, 172);
+    position: fixed;
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    top: 0;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    margin: 0 auto;
+    transition: top 0.3s;
+    z-index: 3;
+}
+
+/* for logo */
+.top_list_two h2 {
+    font-size: 1.6rem;
+    color: var(--pure);
+    justify-self: start;
+    cursor: pointer;
+    margin-left: 60px;
+    text-align: center;
+    font-size: 15px;
+    margin-right: 50px;
+}
+
+.top_list_two p{
+    font-size: 15px;
+    margin-right: 50px;
+    margin-left: 60px;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    margin-right: 60px;
+}
+
+.nav-links {
+    color: var(--ternary);
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.main-header-box {
+    height: 100vh;
+    background: linear-gradient(to bottom,
+            rgba(24, 22, 61, 0.007),
+            rgba(0, 0, 0, 100))
+}
+
+.cart {
+    height: 10px;
+    width: 10px;
+}
+
+.active {
+    color: var(--pure);
+}
+
+.nav-links:hover {
+    color: var(--pure);
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: var(--light);
+}
+
+/* for main page title text*/
+.Bold_Title {
+    font-size: 4rem;
+    color: var(--pure);
+    position: relative;
+    top: 65%;
+    left: 10%;
+    height: 100%;
+    text-transform: uppercase;
+}
+
+.Bold_Title h1 {
+    font-family: "Roboto Mono", monospace;
+    color: var(--pure);
+    font-size: 60px;
+
+}
+
+/* For chat popup, when we click on this button the popup will appear*/
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    z-index: 101;
+    border-radius: 50%;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 102;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+
+/* For main body of website, i.e. model list in left panel and products in right */
+.zero {
+    display: flex;
+}
+
+/* for list of all the models in the left */
+.left-panel {
+    height: 600px;
+    width: 18%;
+    flex: 3;
+    margin: 20px 20px 20px 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+.left-panel ul li {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    background: var(--pure);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .1);
+    transition: transform 0.5s;
+}
+
+.left-panel ul:hover li {
+    opacity: 0.2;
+}
+
+.left-panel ul li:hover {
+    opacity: 1;
+    z-index: 100;
+    background-color: var(--ternary);
+    color: var(--pure);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .2);
+}
+
+.left-panel ul li.activemodel {
+    background-color: var(--ternary);
+    color: var(--pure);
+}
+
+.right-panel {
+    margin: 20px 20px 20px 10px;
+    flex: 9;
+}
+
+.parts-container {
+    overflow: hidden;
+}
+
+.filterDiv {
+    display: none;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+/* Style the tab buttons for selecting different parts */
+.button-panel {
+    margin-bottom: 20px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    margin-bottom:2px;
+    background-color: var(--light);
+    cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+    opacity: 1;
+    z-index: 100;
+    background-color: var(--ternary);
+    color: var(--pure);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .2);
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+    background-color: var(--ternary);
+    color: var(--pure);
+}
+
+
+/* container of my account and shopping cart */
+.shopping-cart {
+    margin-left: 10px;
+    font-size: 1.4rem;
+}
+
+.shopping-cart .sum-prices {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--pure);
+    margin-left: 10px;
+}
+
+#sum-prices {
+    padding-left: 5px;
+}
+
+.sum-prices h6 {
+    font-size: 0.9rem;
+}
+
+.shoppingCartButton {
+    cursor: pointer;
+}
+
+.shoppingCartButton:hover,
+.account:hover * {
+    color: var(--pure);
+}
+
+.producstOnCart {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+    background-color: var(--dark);
+    width: 300px;
+    height: 500px;
+    color: var(--light);
+    z-index: 15;
+    position: fixed;
+    top: 20px;
+    right: 0;
+    text-align: center;
+    animation: fade 1s;
+}
+
+.producstOnCart::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes fade {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+.producstOnCart::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.hide {
+    display: none;
+    visibility: none;
+}
+
+.producstOnCart ul {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.producstOnCart .buyItem {
+    border-bottom: var(--ternary) 1px solid;
+    width: 90%;
+    padding: 10px 0;
+    display: flex;
+}
+
+.producstOnCart img {
+    width: 90px;
+}
+
+.producstOnCart .top {
+    display: flex;
+    background-color: var(--ternary);
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.top button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    color: #c24c37;
+    cursor: pointer;
+}
+
+.top button:hover {
+    color: #e40505;
+}
+
+.top h3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.producstOnCart>.checkout {
+    font-size: 0.9rem;
+    margin: 20px auto;
+    border: none;
+    background-color: #297075;
+    padding: 10px 20px;
+    color: var(--light);
+    cursor: pointer;
+}
+
+/* for opaque black filter when cart is opened */
+.overlay {
+    overflow: hidden;
+    display: inline-block;
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* for hiding the scrollbar when cart is opened */
+.stopScrolling {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.buyItem h6 {
+    margin-bottom: 10px;
+}
+
+.buyItem button {
+    background: transparent;
+    color: var(--pure);
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 1.2rem;
+    padding: 0 6px;
+    border: none;
+}
+
+.buyItem button:active {
+    color: var(--ternary);
+}
+
+.buyItem>div {
+    padding: 0 20px;
+}
+
+.producstOnCart .empty {
+    justify-self: center;
+    margin: 150px auto;
+}
+
+.price {
+    color: #dd3333;
+    text-align: left;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+/* for all the products in the right panel */
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.product {
+    position: relative;
+    text-align: center;
+    height: 400px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-under {
+    width: 100%;
+    height: 100%;
+}
+
+.product-over {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation-name: show_top;
+    animation-duration: 1s;
+    backdrop-filter: blur(5px);
+}
+
+@keyframes show_top {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.product-image:hover .product-over {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    position: relative;
+    height: 62%;
+    background-color: #eee;
+}
+
+.product-image img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.product-summary {
+    font-size: 0.9rem;
+    position: relative;
+    padding: 10px 5px;
+    height: 15%;
+}
+
+.product-summary>.price {
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+}
+
+
+/* Buttons style for every product*/
+.btn i {
+    margin: 0 5px;
+}
+
+.btn-small {
+    border: none;
+    font-size: 0.9rem;
+    width: 60%;
+    padding: 15px;
+    background-color: var(--light);
+    box-shadow: 2px 2px 2px #49989e;
+    color: black;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btn-small:hover {
+    background-color: #49989e;
+    color: var(--light);
+}
+
+/* for payment  popup when checkout button is clicked on the cart*/
+.payment {
+    width: 500px;
+    height: 500px;
+    background-color: var(--pure);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px 50px;
+    display: none;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
+
+.payTitle {
+    font-size: 20px;
+    color: var(--ternary);
+}
+
+label {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.payInput {
+    padding: 10px;
+    margin: 10px 0px;
+    border: none;
+    border-bottom: 1px solid var(--ternary);
+}
+
+.payInput::placeholder {
+    color: var(--ternary);
+}
+
+.cardIcons {
+    display: flex;
+}
+
+.cardIcon {
+    margin-right: 10px;
+}
+
+.cardInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sm {
+    width: 30%;
+}
+
+.payButton {
+    position: absolute;
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    background-color: #369e62;
+    color: var(--pure);
+    border: none;
+    cursor: pointer;
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: var(--ternary);
+    color: var(--pure);
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px;
+}
+
+/* for hiding the checkout button while the cart is empty */
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        position: relative;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: flex-start;
+        background: var(--dark);
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -200px;
+        opacity: 0;
+        transition: top 0.3s;
+        z-index: -1;
+        padding: 20px;
+    }
+
+    #navbar-logo {
+        margin-left: 30px;
+    }
+
+    .nav-menu.active {
+        background: var(--dark);
+        overflow: hidden;
+        top: 80px;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links {
+        text-align: center;
+        line-height: 60px;
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .nav-links:hover {
+        color: var(--pure);
+        transition: all 0.4s ease-in-out;
+    }
+
+    #navbar {
+        width: 100%;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .menu-toggle:hover {
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(135deg);
+    }
+
+    .Bold_Title h1 {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        padding: 6px 14px;
+    }
+
+    .product-summary {
+        height: 15%;
+    }
+
+    .products {
+        width: 80%;
+        margin: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-summary>p {
+        display: none;
+    }
+
+    .pop-mobiles-1>figure {
+        width: 70%;
+    }
+
+    .pop-mobiles-1>div {
+        left: 10%;
+        top: 40%;
+        width: 70%;
+        height: auto;
+    }
+
+    .payment {
+        width: 90%;
+        padding: 20px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    .navbar {
+        width: 100vw;
+        height: 430px;
+    }
+
+    .producstOnCart {
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-weight: 900;
+        font-size: 1.4rem;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product-summary .price {
+        display: inline;
+        left: 0;
+    }
+}
